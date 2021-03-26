@@ -34,10 +34,24 @@ public class Main {
         }
         System.out.println (Arrays.toString(array));
     }
+    public static void fillArrayDiagonal() {
+        int[][] sqareArray = new int[11][11];
+        int diagonalMarker = 1;
+        for (int i = 0; i < sqareArray.length; i++) {
+            for (int j = 0; j < sqareArray.length; j++) {
+                if ((i == j) || (i + j == sqareArray.length - 1)) {
+                    sqareArray[i][j] = diagonalMarker;
+                }
+                System.out.print (sqareArray[i][j] + "  ");
+            }
+            System.out.println();
+        }
+    }
 
     public static void main(String[] args){
-    invertArray();
-    fillArray();
-    multiplyArray();
+//    invertArray();
+//    fillArray();
+//    multiplyArray();
+    fillArrayDiagonal();
     }
 }
