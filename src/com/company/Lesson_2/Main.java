@@ -1,6 +1,7 @@
 package com.company.Lesson_2;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
 
@@ -35,7 +36,8 @@ public class Main {
         System.out.println (Arrays.toString(array));
     }
     public static void fillArrayDiagonal() {
-        int[][] sqareArray = new int[11][11];
+        int arraySize = 15;
+        int[][] sqareArray = new int[arraySize][arraySize];
         int diagonalMarker = 1;
         for (int i = 0; i < sqareArray.length; i++) {
             for (int j = 0; j < sqareArray.length; j++) {
@@ -48,10 +50,39 @@ public class Main {
         }
     }
 
+    public static void findMinAndMaxArrayValue() {
+        Random random = new Random();
+        int arraySize = 15;
+        int randomLimit = 100;
+        int[] array = new int[arraySize];
+
+        for (int i = 0 ; i < array.length ; i++) {
+            array[i] = random.nextInt(randomLimit);
+        }
+
+        int minValue = array[0];
+        int maxValue = array[0];
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < minValue) {
+                minValue = array[i];
+            }else if (array[i] > maxValue) {
+                maxValue = array[i];
+            }
+        }
+
+        System.out.println (Arrays.toString(array));
+        System.out.println("Минимальное значение массива: " + minValue);
+        System.out.println("Максимально значение массива: " + maxValue);
+    }
+
+
+
     public static void main(String[] args){
 //    invertArray();
 //    fillArray();
 //    multiplyArray();
-    fillArrayDiagonal();
+//    fillArrayDiagonal();
+        findMinAndMaxArrayValue();
     }
 }
