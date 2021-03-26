@@ -5,8 +5,16 @@ import java.util.Random;
 
 public class Main {
 
+    public static Random random = new Random();
+
     public static void invertArray() {
-        int[] array = { 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1 };
+        int arraySize = 15;
+        int[] array = new int[arraySize];
+
+        for (int i = 0 ; i < array.length ; i++)
+            array[i] = random.nextInt(2);
+        System.out.println (Arrays.toString(array));
+
         for (int i = 0; i < array.length; i++) {
             if (array[i] == 1) {
                 array[i] = 0;
@@ -27,6 +35,7 @@ public class Main {
     }
     public static void multiplyArray() {
         int[] array = { 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 };
+        System.out.println (Arrays.toString(array));
         int multiplyCoefficient = 2;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 6) {
@@ -51,7 +60,6 @@ public class Main {
     }
 
     public static void findMinAndMaxArrayValue() {
-        Random random = new Random();
         int arraySize = 15;
         int randomLimit = 100;
         int[] array = new int[arraySize];
@@ -76,13 +84,55 @@ public class Main {
         System.out.println("Максимально значение массива: " + maxValue);
     }
 
+    public static boolean checkBalance(int[] array) {
+
+
+    boolean checkEquality = false;
+
+        for (int  balancePoint = 0; balancePoint < array.length; balancePoint++) {
+
+            int sumLeft = 0;
+            int sumRight = 0;
+            for (int i = 0; i < balancePoint; i++)
+                sumLeft = sumLeft + array[i];
+
+            for (int k = balancePoint; k < array.length; k++)
+                sumRight = sumRight + array[k];
+
+            if (sumLeft == sumRight) {
+                checkEquality = true;
+                System.out.println("Суммы левой и правой части равны после " + balancePoint
+                        + " элемента массива");
+            }
+        }
+        if (checkEquality == false)
+            System.out.println ("Суммы левой и правой части не равны.");
+        return checkEquality;
+    }
+
 
 
     public static void main(String[] args){
-//    invertArray();
-//    fillArray();
-//    multiplyArray();
-//    fillArrayDiagonal();
-        findMinAndMaxArrayValue();
+    invertArray();
+    System.out.println();
+    fillArray();
+    System.out.println();
+    multiplyArray();
+    System.out.println();
+    fillArrayDiagonal();
+    System.out.println();
+    findMinAndMaxArrayValue();
+    System.out.println();
+
+    int arraySize = 10;
+    int randomLimit = 3;
+    int[] array = new int[arraySize];
+
+    for (int i = 0 ; i < array.length ; i++) {
+        array[i] = random.nextInt(randomLimit);
+    }
+    System.out.println (Arrays.toString(array));
+    checkBalance(array);
+
     }
 }
