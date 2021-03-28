@@ -39,25 +39,27 @@ public class Main {
         if (playAgain == 1) guessNumber();
     }
 
-    public static void guessWord () {
-        String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado",
-                "broccoli", "carrot", "cherry", "garlic", "grape", "melon", "leak",
-                "kiwi", "mango", "mushroom", "nut", "olive", "pea", "peanut", "pear",
-                "pepper", "pineapple", "pumpkin", "potato"};
-        System.out.println(Arrays.toString(words));
-        System.out.println("Угадай загаданное слово из приведенных выше ");
-        int wordIndex = random.nextInt(words.length);
-        String userWord = scanner.next();
-        if (userWord == words[wordIndex])
-            System.out.println("Ты угадал!");
-        else
-            System.out.println("xyz");
+//    public static void guessWord () {
+//        String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado",
+//                "brocoli", "carrot", "cherry", "garlic", "grape", "melon", "leak",
+//                "kiwi", "mango", "mushroom", "nut", "olive", "pea", "peanut", "pear",
+//                "pepper", "pineapple", "pumpkin", "potato"};
+//        System.out.println(Arrays.toString(words));
+//        System.out.println("Угадай загаданное слово из приведенных выше ");
+//        int wordIndex = random.nextInt(words.length);
+//        String userWord = scanner.next();
+//        if (userWord.equals(words[wordIndex]))
+//            System.out.println("Ты угадал!");
+//        else
+//            System.out.println("xyz");
+//
+//    }
+//
 
-    }
 
     public static void main(String[] args){
 //        guessNumber();
-        guessWord();
+//        guessWord();
         scanner.close();
     }
 }
