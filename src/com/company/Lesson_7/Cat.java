@@ -9,9 +9,8 @@ public class Cat {
         this.name = name;
         this.appetite = appetite;
     }
-    public String toString() {
-        return name + " " + appetite;
-    }
+
+    public String toString() { return name + " " + appetite; }
 
     public void eat(Plate p) {
         int food = p.getFood();
@@ -19,8 +18,7 @@ public class Cat {
             p.decreaseFood(appetite);
             satiety = true;
             System.out.println("Кот " + name + " поел.");
-        } else {
-            System.out.println("Коту " + name + " не хватает еды. Кот не стал есть.");
-        }
+        } else { System.out.println("Коту " + name + " не хватает еды. Кот не стал есть."); }
     }
+    public boolean getSatiety() { return satiety; }
 }
