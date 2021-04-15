@@ -9,6 +9,9 @@ public class Cat {
         this.name = name;
         this.appetite = appetite;
     }
+    public String toString() {
+        return name + " " + appetite;
+    }
 
     public void eat(Plate p) {
         int food = p.getFood();
