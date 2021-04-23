@@ -4,16 +4,16 @@ import java.util.Random;
 
 public class Main {
 
-    public static int arraySize = 4;
-    public static Random random = new Random();
-    public static int randomLimit = 5;
+    public static final int ARRAY_SIZE = 4;
+    public static final int RANDOM_LIMIT = 5;
 
     public static void main(String[] args) {
+        Random random = new Random();
 
-        String[][] array = new String[2][arraySize];
+        String[][] array = new String[ARRAY_SIZE][ARRAY_SIZE];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                array[i][j] = Integer.toString(random.nextInt(randomLimit) + 1);
+                array[i][j] = Integer.toString(random.nextInt(RANDOM_LIMIT) + 1);
                 array[1][1] = "a";
                 System.out.print(array[i][j] + " ");
             }
