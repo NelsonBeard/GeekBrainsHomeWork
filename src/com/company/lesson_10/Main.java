@@ -1,14 +1,8 @@
 package com.company.lesson_10;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        findUniqueAnimals();
-    }
 
     public static void findUniqueAnimals() {
         ArrayList<String> animalList = new ArrayList<>(Arrays.asList("Козел", "Кот", "Жираф", "Козел",
@@ -22,5 +16,25 @@ public class Main {
             int count = Collections.frequency(animalList, animal);
             System.out.println(animal + " - " + count);
         }
+    }
+
+    public static void main(String[] args) {
+        findUniqueAnimals();
+        System.out.println();
+
+        Phonebook colleagues = new Phonebook();
+        colleagues.add("221332", "Иванов");
+        colleagues.add("11233", "Иванов");
+        colleagues.add("453223", "Петров");
+        colleagues.add("896445", "Васечкин");
+        colleagues.add("896445", "Фесенко");
+        colleagues.add("469556", "Сафин");
+        colleagues.add("254487", "Сафин");
+
+//        colleagues.printPhonebook();
+//        System.out.println();
+
+        colleagues.get("иванов");
+        colleagues.get("Васечкин");
     }
 }
