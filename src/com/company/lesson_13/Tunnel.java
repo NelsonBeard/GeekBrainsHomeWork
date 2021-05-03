@@ -8,7 +8,7 @@ public class Tunnel extends Stage {
         this.description = "Тоннель " + length + " метров";
     }
 
-    Semaphore tunnelLimit = new Semaphore(Main.CARS_COUNT / 2);
+    Semaphore tunnelLimit = new Semaphore(Main.TUNNEL_CAR_LIMIT);
 
     @Override
     public void go(Car c) {

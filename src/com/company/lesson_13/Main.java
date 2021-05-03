@@ -5,6 +5,7 @@ import java.util.concurrent.CyclicBarrier;
 
 public class Main {
     public static final int CARS_COUNT = 4;
+    public static final int TUNNEL_CAR_LIMIT = CARS_COUNT/2;
     public static CountDownLatch START = new CountDownLatch(CARS_COUNT);
     public static CountDownLatch FINISH = new CountDownLatch(CARS_COUNT);
     public static CyclicBarrier PREPARE_TO_START = new CyclicBarrier(CARS_COUNT);
